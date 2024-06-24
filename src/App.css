@@ -1,0 +1,125 @@
+/* .main-background {
+  background-image: url('./assets/asset1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+} */
+
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.radio {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.radio-img {
+  /* width: 10%; */
+  height: 25%;
+  object-fit: cover;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  scale: 1;
+}
+
+.pause {
+  filter: grayscale(0%);
+}
+
+.play {
+  filter: grayscale(100%);
+}
+
+/* .pause:hover {
+  scale: 1;
+} */
+
+
+/* .play:hover {
+  scale: 1.1;
+  animation-duration: 600ms;
+} */
+
+.volume-container {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgba(255, 255, 255, 0.482);
+  font-size: 1rem;
+  /* background-color: red; */
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* transform: translate(-50%, -50%); */
+
+}
+
+.volumeSlider {
+  /* width: 10%; */
+  /* height: 10px; */
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.5;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  /* rotate: -90deg; */
+  /* position: absolute;
+  bottom: 150px;
+  right: 40px; */
+  /* transform: translate(-50%, -50%); */
+}
+
+.volumeSlider:hover {
+  opacity: 0.7;
+}
+
+.beta {
+  position: absolute;
+  top: 5%;
+  right: 6%;
+  color: white;
+  font-size: 1.5rem;
+  background-color: palevioletred;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.mobile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .dekstop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dekstop {
+    display: none;
+  }
+}

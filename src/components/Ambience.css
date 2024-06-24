@@ -1,0 +1,59 @@
+.ambience {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+  /* background-color: red; */
+  gap: 1rem;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.label-ambience {
+  color: rgba(255, 255, 255, 0.823);
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ambience-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.444);
+
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.ambience-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ambience-image-pause {
+  filter: grayscale(0%);
+}
+
+.ambience-image-play {
+  filter: grayscale(100%);
+}
+
+.ambience-slider {
+  width: 100px;
+  height: 10px;
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.761);
+
+  -webkit-appearance: none;
+
+  outline: none;
+
+  opacity: 0.5;
+
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
