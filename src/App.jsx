@@ -12,6 +12,7 @@ import Radio from "./assets/radioOnly.svg"
 import Rainy from "./assets/Rain.mp3"
 import Bird from "./assets/birds.mp3"
 import Sound from "./assets/sound2.mp3"
+import Contact from "./components/Contact"
 
 function App() {
   const audioRef = useRef(null)
@@ -51,6 +52,7 @@ function App() {
           loop={true}
           labelVolume="Rain"
         />
+        <Contact />
 
         {/* RADIO ONLY  */}
         <audio ref={audioRef} src={Sound} />
