@@ -55,7 +55,7 @@ function App() {
         <Contact />
 
         {/* RADIO ONLY  */}
-        <audio ref={audioRef} src={Sound} />
+        <audio ref={audioRef} src={Sound} loop={true} />
         <div className="volume-container">
           <label className="label-radio">Radio</label>
           <input
