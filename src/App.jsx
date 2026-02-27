@@ -12,7 +12,7 @@ import Radio from "./assets/radioOnly.svg"
 
 import Rainy from "./assets/Rain.mp3"
 import Bird from "./assets/birds.mp3"
-import Sound from "./assets/sound2.mp3"
+import Nashed from "./assets/nashed.mp3"
 import Quran from "./assets/quran.mp3"
 import Contact from "./components/Contact"
 
@@ -20,6 +20,8 @@ function App() {
   const audioRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [volume, setVolume] = useState(1)
+  const [selectedAudio, setSelectedAudio] = useState(Quran)
+  const [selectedLabel, setSelectedLabel] = useState("Quran")
 
   const playAudio = () => {
     audioRef.current.play()
@@ -35,6 +37,17 @@ function App() {
     const volumeValue = event.target.value
     audioRef.current.volume = volumeValue
     setVolume(volumeValue)
+  }
+
+  const switchAudio = (audioSrc, label) => {
+    // Pause current playback
+    if (isPlaying) {
+      audioRef.current.pause()
+      setIsPlaying(false)
+    }
+    // Switch to new audio source
+    setSelectedAudio(audioSrc)
+    setSelectedLabel(label)
   }
 
   return (
@@ -66,9 +79,30 @@ function App() {
         <Contact />
 
         {/* RADIO ONLY  */}
-        <audio ref={audioRef} src={Quran} loop={true} />
+        <audio ref={audioRef} src={selectedAudio} loop={true} />
+        
+        {/* Cassette List */}
+        <div className="cassette-list">
+          <button
+            className={`cassette-btn ${selectedLabel === "Quran" ? "active" : ""}`}
+            onClick={() => switchAudio(Quran, "Quran")}
+            title="Play Quran"
+          >
+            <span className="cassette-icon">📻</span>
+            <span className="cassette-label">Quran</span>
+          </button>
+          <button
+            className={`cassette-btn ${selectedLabel === "Nashed" ? "active" : ""}`}
+            onClick={() => switchAudio(Nashed, "Nashed")}
+            title="Play Nashed"
+          >
+            <span className="cassette-icon">🎵</span>
+            <span className="cassette-label">Nashed</span>
+          </button>
+        </div>
+        
         <div className="volume-container">
-          <label className="label-radio">Radio</label>
+          <label className="label-radio">{selectedLabel}</label>
           <input
             className="volumeSlider"
             type="range"

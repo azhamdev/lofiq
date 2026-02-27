@@ -85,6 +85,61 @@
   opacity: 0.7;
 }
 
+/* Cassette List Styles */
+.cassette-list {
+  position: absolute;
+  bottom: 120px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 50;
+}
+
+.cassette-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.cassette-icon {
+  font-size: 1.2rem;
+}
+
+.cassette-label {
+  display: inline-block;
+}
+
+.cassette-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateX(2px);
+}
+
+.cassette-btn.active {
+  background: rgba(100, 200, 255, 0.35);
+  border-color: rgba(100, 200, 255, 0.7);
+  color: rgba(100, 200, 255, 1);
+  box-shadow: 0 0 15px rgba(100, 200, 255, 0.4);
+}
+
+.cassette-btn.active:hover {
+  background: rgba(100, 200, 255, 0.45);
+  border-color: rgba(100, 200, 255, 0.9);
+}
+
 .beta {
   position: absolute;
   top: 5%;
