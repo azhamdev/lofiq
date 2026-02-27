@@ -97,6 +97,19 @@
   z-index: 1;
 }
 
+.pomodoro-center-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.pomodoro-center-container > * {
+  pointer-events: auto;
+}
+
 .mobile {
   position: absolute;
   top: 50%;

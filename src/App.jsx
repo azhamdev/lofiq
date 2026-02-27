@@ -2,6 +2,7 @@ import "./App.css"
 
 import { useRef, useState } from "react"
 import AudioPlayer from "./components/AudioPlayer"
+import Pomodoro from "./components/Pomodoro/Pomodoro"
 
 // images
 import Leaf from "./assets/Leaf.svg"
@@ -12,6 +13,7 @@ import Radio from "./assets/radioOnly.svg"
 import Rainy from "./assets/Rain.mp3"
 import Bird from "./assets/birds.mp3"
 import Sound from "./assets/sound2.mp3"
+import Quran from "./assets/quran.mp3"
 import Contact from "./components/Contact"
 
 function App() {
@@ -36,7 +38,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div >
       <div className="main-background dekstop">
         <img src={Background} className="background" />
 
@@ -52,10 +54,19 @@ function App() {
           loop={true}
           labelVolume="Rain"
         />
+        
+        <div style={{
+          position: "absolute",
+          top: "5%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}>
+          <Pomodoro />
+        </div>
         <Contact />
 
         {/* RADIO ONLY  */}
-        <audio ref={audioRef} src={Sound} loop={true} />
+        <audio ref={audioRef} src={Quran} loop={true} />
         <div className="volume-container">
           <label className="label-radio">Radio</label>
           <input

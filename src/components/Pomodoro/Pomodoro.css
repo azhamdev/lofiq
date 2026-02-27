@@ -1,0 +1,255 @@
+.pomodoro-container {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pomodoro-trigger-btn {
+  background: rgba(255, 255, 255, 0.444);
+  border: none;
+  color: rgba(255, 255, 255, 0.823);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  transition: all 0.3s ease;
+}
+
+.pomodoro-trigger-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 1);
+}
+
+.pomodoro-container h1 {
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pomodoro-display {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.timer-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
+}
+
+.timer-circle.work {
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+}
+
+.timer-circle.break {
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+.timer-text {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 2px;
+}
+
+.session-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pomodoro-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.control-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.control-btn.play {
+  border-color: rgba(34, 197, 94, 0.5);
+  color: rgba(34, 197, 94, 0.9);
+}
+
+.control-btn.play:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.8);
+}
+
+.control-btn.pause {
+  border-color: rgba(239, 68, 68, 0.5);
+  color: rgba(239, 68, 68, 0.9);
+}
+
+.control-btn.pause:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.8);
+}
+
+.control-btn.reset {
+  border-color: rgba(125, 211, 252, 0.5);
+  color: rgba(125, 211, 252, 0.9);
+}
+
+.control-btn.reset:hover {
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.8);
+}
+
+.sessions-info {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(125, 211, 252, 0.5);
+}
+
+.sessions-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sessions-info strong {
+  color: rgba(125, 211, 252, 0.9);
+  font-size: 1.1rem;
+}
+
+.pomodoro-settings {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 140px;
+  text-align: right;
+}
+
+.duration-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.duration-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(125, 211, 252, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.duration-slider::-webkit-slider-thumb:hover {
+  background: rgba(125, 211, 252, 1);
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.5);
+}
+
+.duration-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(125, 211, 252, 0.8);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.duration-slider::-moz-range-thumb:hover {
+  background: rgba(125, 211, 252, 1);
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.5);
+}
+
+.duration-slider:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.duration-value {
+  min-width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(125, 211, 252, 0.9);
+  font-weight: 600;
+}
+
+/* Stronger overrides for reactjs-popup generated elements */
+/* Covers multiple possible class names to ensure popup background is transparent */
+.reactjs-popup-overlay,
+.reactjs-popup-overlay.open,
+.popup-overlay,
+.popup-overlay.open {
+  background: transparent !important;
+}
+
+.reactjs-popup-content,
+.reactjs-popup-content-wrapper,
+.popup-content,
+.popup-content-wrapper,
+.popup,
+.popup > div {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* If the popup library injects inline styles via data attributes or other wrappers, target generic wrappers */
+[class*="reactjs-popup"],
+[class*="popup"] {
+  background: transparent !important;
+}
